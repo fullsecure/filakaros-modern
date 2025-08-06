@@ -1,0 +1,6 @@
+# حماية مجلد المكتبات من الوصول المباشر
+Order Deny,Allow
+Deny from all
+
+# منع عرض محتويات المجلد
+Options -Indexes

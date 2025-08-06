@@ -1,0 +1,154 @@
+# ===== حماية شاملة لموقع Filakaros =====
+
+# منع عرض محتويات المجلدات
+Options -Indexes
+
+# حماية ملفات البيئة والتكوين
+<Files ".env*">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*.config.js">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "package*.json">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "tsconfig.json">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "tailwind.config.js">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "next.config.js">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "ecosystem.config.js">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "vercel.json">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# حماية ملفات Git
+<Files ".git*">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# حماية ملفات النسخ الاحتياطية
+<Files "*.bak">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*.backup">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*~">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# حماية ملفات السجلات
+<Files "*.log">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# حماية ملفات التوثيق الحساسة
+<Files "README.md">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*_GUIDE.md">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*_REPORT.md">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*_CHECKLIST.md">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# حماية مجلد node_modules
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^node_modules/ - [F,L]
+</IfModule>
+
+# حماية مجلد .next
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.next/(?!static/) - [F,L]
+</IfModule>
+
+# إعدادات الأمان العامة
+<IfModule mod_headers.c>
+    # منع clickjacking
+    Header always append X-Frame-Options SAMEORIGIN
+    
+    # منع MIME type sniffing
+    Header set X-Content-Type-Options nosniff
+    
+    # تفعيل XSS protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # إعدادات Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy أساسي
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self';"
+</IfModule>
+
+# ضغط الملفات لتحسين الأداء
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# إعدادات Cache للملفات الثابتة
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 2 days"
+</IfModule>

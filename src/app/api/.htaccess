@@ -1,0 +1,15 @@
+# حماية مجلد API
+# السماح فقط بطلبات POST للـ contact API
+<Files "route.ts">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# منع عرض محتويات المجلد
+Options -Indexes
+
+# حماية من الوصول المباشر للملفات
+<FilesMatch "\.(ts|tsx|js|jsx)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
