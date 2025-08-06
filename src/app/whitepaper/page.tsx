@@ -31,20 +31,20 @@ const whitepaperSections = [
     description: "The native digital currency powering the Filakaros ecosystem",
     content: [
       "Total Supply: 5 billion tokens",
-      "Presale Price: $0.0007",
-      "Listing Price: $0.001",
+      "Current Price: $0.007",
+      "Active Holders: 152K wallets",
       "Built on Binance Smart Chain"
     ]
   },
   {
     icon: Globe,
-    title: "Civilizations AI Game",
-    description: "Interactive experience exploring 195 countries through NFTs",
+    title: "Civilizations AI Platform",
+    description: "Advanced cultural exploration platform launching after trading infrastructure",
     content: [
-      "NFT boxes for each country",
-      "3D historical landmarks",
-      "AI-powered audio guides",
-      "Trading and investment in landmarks"
+      "195 unique country NFT boxes",
+      "3D historical landmarks with AI guides",
+      "AR/VR immersive experiences",
+      "Educational content & virtual tours"
     ]
   },
   {
@@ -61,12 +61,12 @@ const whitepaperSections = [
   {
     icon: Users,
     title: "Ecosystem",
-    description: "Integrated platform combining education, investment, and entertainment",
+    description: "Integrated platform combining trading, education, investment, and entertainment",
     content: [
-      "IKAROS trading platform",
-      "Heritage NFT marketplace",
-      "Augmented reality applications",
-      "Interactive education programs"
+      "IKAR Trading Platform (Priority - Q2-Q4 2026)",
+      "Civilizations AI Game (Q1-Q3 2027)",
+      "Cultural Heritage NFT Marketplace (Q2-Q4 2027)",
+      "IKAR DeFi Platform (Q1-Q3 2028)"
     ]
   },
   {
@@ -84,47 +84,47 @@ const whitepaperSections = [
 
 const roadmapPhases = [
   {
-    phase: "Phase One",
-    period: "Q1 2024",
-    title: "Foundation & Launch",
+    phase: "Phase I-III",
+    period: "Q1 2024 - Q1 2025",
+    title: "Foundation & Token Launch",
     items: [
-      "Official website launch",
-      "Whitepaper publication",
-      "Community building",
-      "Initial marketing campaign"
+      "Official website & whitepaper launch",
+      "Community building & partnerships",
+      "IKAROS token private presale",
+      "DEX listings & liquidity establishment"
     ]
   },
   {
-    phase: "Phase Two",
-    period: "Q2 2024",
-    title: "Funding & Token",
+    phase: "Phase IV",
+    period: "Q2-Q4 2026",
+    title: "IKAR Trading Platform",
     items: [
-      "Token presale launch",
-      "Exchange listings",
-      "Liquidity pool establishment",
-      "Strategic partnerships"
+      "Priority development of trading platform",
+      "Advanced trading engine & security",
+      "Professional-grade analytics tools",
+      "Beta testing & platform launch"
     ]
   },
   {
-    phase: "Phase Three",
-    period: "Q3-Q4 2024",
-    title: "Development & Innovation",
+    phase: "Phase V-VI",
+    period: "Q1-Q3 2027",
+    title: "Civilizations AI & Integration",
     items: [
       "Civilizations AI platform development",
-      "Heritage NFT initiatives launch",
-      "AI and AR technology integration",
-      "Partnership building"
+      "195 unique country NFT boxes",
+      "3D landmark exploration with AI guides",
+      "AR/VR integration & user testing"
     ]
   },
   {
-    phase: "Phase Four",
-    period: "Q1-Q2 2025",
-    title: "Global Expansion",
+    phase: "Phase VII-IX",
+    period: "Q2 2027 - Q3 2028",
+    title: "Ecosystem Completion",
     items: [
-      "Global project expansion",
-      "Educational programs launch",
-      "Specialized heritage platforms development",
-      "Technical and heritage awareness enhancement"
+      "Cultural Heritage NFT Marketplace",
+      "Major CEX partnerships & listings",
+      "IKAR DeFi Platform with staking",
+      "Educational ecosystem & global expansion"
     ]
   }
 ]
@@ -314,7 +314,7 @@ export default function WhitepaperPage() {
                 </Button>
 
                 <p className="text-xs text-muted-foreground mt-4">
-                  File size: ~2.5 MB | Last updated: December 2024
+                  File size: ~2.5 MB | Last updated: January 2025
                 </p>
               </CardContent>
             </Card>
