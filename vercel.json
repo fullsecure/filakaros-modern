@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "filakaros-website",
+  "name": "filakaros_website",
   "builds": [
     {
       "src": "package.json",
