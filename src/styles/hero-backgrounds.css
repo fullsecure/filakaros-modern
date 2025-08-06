@@ -1,0 +1,390 @@
+/* Hero Background Styles */
+
+.hero-background-smooth {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: brightness(0.4) contrast(0.7) saturate(0.6) blur(1px);
+  transform: translateZ(0);
+  will-change: transform;
+  z-index: 1;
+  transform-origin: center center;
+  opacity: 0.6;
+}
+
+/* طبقة التعتيم الأساسية */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 25%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.4) 75%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 2;
+}
+
+/* طبقة زجاجية مغشاة */
+.hero-glass-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* طبقة زجاجية تحت المحتوى - مقللة التشويه */
+.hero-content-glass-layer {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 25%,
+    rgba(0, 0, 0, 0.01) 50%,
+    rgba(255, 255, 255, 0.01) 75%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  -webkit-backdrop-filter: blur(1px) brightness(1.03);
+  backdrop-filter: blur(1px) brightness(1.03);
+  pointer-events: none;
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.02);
+}
+
+/* تحسين الانتقالات */
+.hero-background-transition {
+  transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* تحسين حركة الزوم - أبطأ وأنعم */
+.hero-zoom-animation {
+  animation: heroSmoothZoom 45s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes heroSmoothZoom {
+  0%, 100% {
+    transform: scale(1) translateZ(0);
+  }
+  50% {
+    transform: scale(1.015) translateZ(0);
+  }
+}
+
+/* Specific background images */
+.hero-bg-homeimg {
+  background-image: url('/images/hero/homeimg.jpg');
+}
+
+.hero-bg-homeimg1 {
+  background-image: url('/images/hero/homeimg1.jpg');
+}
+
+.hero-bg-homeimg2 {
+  background-image: url('/images/hero/homeimg2.jpg');
+}
+
+.hero-bg-new3 {
+  background-image: url('/images/hero/new3.jpg');
+}
+
+.hero-bg-new4 {
+  background-image: url('/images/hero/new4.jpg');
+}
+
+.hero-bg-new5 {
+  background-image: url('/images/hero/new5.jpg');
+}
+
+/* Parallax effect for hero backgrounds */
+.hero-parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Smooth transitions for background changes */
+.hero-background-transition {
+  transition: all 1.5s ease-out;
+}
+
+/* Overlay gradients for different themes - ثابت بدون ارتجاج */
+.hero-overlay-heritage {
+  background: linear-gradient(
+    to right,
+    rgba(120, 53, 15, 0.6),
+    rgba(194, 65, 12, 0.4),
+    rgba(120, 53, 15, 0.6)
+  );
+  opacity: 0.6;
+}
+
+.hero-overlay-technology {
+  background: linear-gradient(
+    to right,
+    rgba(30, 58, 138, 0.6),
+    rgba(79, 70, 229, 0.4),
+    rgba(30, 58, 138, 0.6)
+  );
+  opacity: 0.6;
+}
+
+.hero-overlay-innovation {
+  background: linear-gradient(
+    to right,
+    rgba(6, 78, 59, 0.6),
+    rgba(20, 184, 166, 0.4),
+    rgba(6, 78, 59, 0.6)
+  );
+  opacity: 0.6;
+}
+
+.hero-overlay-experience {
+  background: linear-gradient(
+    to right,
+    rgba(131, 24, 67, 0.6),
+    rgba(236, 72, 153, 0.4),
+    rgba(131, 24, 67, 0.6)
+  );
+  opacity: 0.6;
+}
+
+.hero-overlay-token {
+  background: linear-gradient(
+    to right,
+    rgba(146, 64, 14, 0.6),
+    rgba(245, 158, 11, 0.4),
+    rgba(146, 64, 14, 0.6)
+  );
+  opacity: 0.6;
+}
+
+.hero-overlay-game {
+  background: linear-gradient(
+    to right,
+    rgba(67, 56, 202, 0.6),
+    rgba(139, 92, 246, 0.4),
+    rgba(67, 56, 202, 0.6)
+  );
+  opacity: 0.6;
+}
+
+/* Animation keyframes for background effects */
+@keyframes heroBackgroundZoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes heroOverlayPulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* تم إزالة الأنيميشن المسبب للارتجاج */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-background-image,
+  .hero-background-animated {
+    background-position: center center;
+    filter: brightness(0.6) contrast(1.1);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hero-background-image,
+  .hero-background-animated {
+    filter: brightness(0.5) contrast(1.5);
+  }
+}
+
+/* Enhanced text shadows and effects - واضح جداً */
+.hero-text-shadow {
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 1),
+    0 2px 6px rgba(0, 0, 0, 0.8),
+    0 0 1px rgba(0, 0, 0, 1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+  font-weight: 700;
+}
+
+.hero-text-glow {
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 1),
+    0 2px 6px rgba(0, 0, 0, 0.8),
+    0 0 1px rgba(0, 0, 0, 1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: 700;
+}
+
+/* تحسين وضوح النص فوق الطبقة الزجاجية - أقصى وضوح */
+.hero-text-enhanced {
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 1),
+    0 2px 6px rgba(0, 0, 0, 0.8),
+    0 0 1px rgba(0, 0, 0, 1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-weight: 700;
+}
+
+/* خلفية شبه شفافة للنصوص */
+.hero-text-backdrop {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  border-radius: 16px;
+  padding: 1.5rem 2.5rem;
+  margin: 0.75rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced button effects */
+.hero-button-glow {
+  box-shadow:
+    0 4px 14px 0 rgba(0, 118, 255, 0.39),
+    0 0 20px rgba(0, 118, 255, 0.2);
+}
+
+.hero-button-glow:hover {
+  box-shadow:
+    0 6px 20px 0 rgba(0, 118, 255, 0.5),
+    0 0 30px rgba(0, 118, 255, 0.3);
+}
+
+/* Statistics card enhancements */
+.hero-stat-card {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-stat-card:hover {
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Navigation controls enhancements */
+.hero-nav-control {
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease-out;
+}
+
+.hero-nav-control:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Scroll indicator enhancements */
+.hero-scroll-indicator {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .hero-title-responsive {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .hero-subtitle-responsive {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    line-height: 1.4;
+  }
+
+  .hero-description-responsive {
+    font-size: clamp(0.875rem, 3.5vw, 1rem);
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-title-responsive {
+    font-size: clamp(3rem, 6vw, 4rem);
+    line-height: 1.1;
+  }
+
+  .hero-subtitle-responsive {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    line-height: 1.3;
+  }
+
+  .hero-description-responsive {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero-title-responsive {
+    font-size: clamp(4rem, 5vw, 6rem);
+    line-height: 1.05;
+  }
+
+  .hero-subtitle-responsive {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    line-height: 1.25;
+  }
+
+  .hero-description-responsive {
+    font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+    line-height: 1.4;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-background-zoom {
+    animation: none;
+  }
+
+  .hero-overlay-pulse {
+    animation: none;
+  }
+
+  .hero-stat-card {
+    transition: none;
+  }
+
+  .hero-nav-control {
+    transition: none;
+  }
+}

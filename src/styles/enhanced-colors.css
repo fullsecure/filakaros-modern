@@ -1,0 +1,139 @@
+/* ===== نظام الألوان المبسط والمحسّن لموقع فيلاكاروس ===== */
+
+/* متغيرات الألوان المبسطة للوضع الفاتح */
+:root {
+  /* ===== ألوان الأقسام المحسّنة ===== */
+  
+  /* ألوان أساسية للأقسام */
+  --section-primary: #f8fafc;
+  --section-secondary: #f1f5f9;
+  --section-accent: #e2e8f0;
+  
+  /* ألوان التمييز */
+  --highlight-primary: rgba(79, 70, 229, 0.05);
+  --highlight-secondary: rgba(124, 58, 237, 0.05);
+  --highlight-accent: rgba(5, 150, 105, 0.05);
+}
+
+/* متغيرات الألوان المبسطة للوضع المظلم */
+.dark {
+  /* ===== ألوان الأقسام المحسّنة للوضع المظلم ===== */
+  
+  /* ألوان أساسية للأقسام */
+  --section-primary: #0f172a;
+  --section-secondary: #1e293b;
+  --section-accent: #334155;
+  
+  /* ألوان التمييز */
+  --highlight-primary: rgba(99, 102, 241, 0.08);
+  --highlight-secondary: rgba(139, 92, 246, 0.08);
+  --highlight-accent: rgba(16, 185, 129, 0.08);
+}
+
+/* ===== فئات الخلفيات المبسطة ===== */
+
+/* خلفيات الأقسام الأساسية */
+.section-bg-primary { 
+  background: var(--section-primary); 
+}
+
+.section-bg-secondary { 
+  background: var(--section-secondary); 
+}
+
+.section-bg-accent { 
+  background: var(--section-accent); 
+}
+
+/* خلفيات مبسطة للأقسام المختلفة */
+.hero-bg { 
+  background: var(--section-primary); 
+}
+
+.features-bg { 
+  background: var(--section-secondary); 
+}
+
+.stats-bg { 
+  background: var(--section-accent); 
+}
+
+.about-bg { 
+  background: var(--section-primary); 
+}
+
+.tokenomics-bg { 
+  background: var(--section-secondary); 
+}
+
+.roadmap-bg { 
+  background: var(--section-accent); 
+}
+
+.team-bg { 
+  background: var(--section-primary); 
+}
+
+.community-bg { 
+  background: var(--section-secondary); 
+}
+
+.faq-bg { 
+  background: var(--section-accent); 
+}
+
+/* ===== تأثيرات بسيطة ومحسّنة ===== */
+
+/* تأثير hover بسيط للبطاقات */
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+  transition: all 0.3s ease;
+}
+
+/* تأثير الإضاءة البسيط */
+.simple-glow {
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.simple-glow:hover {
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+/* تأثير الزجاج المبسط */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* تدرجات النصوص المحسّنة */
+.text-gradient-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-gradient-warm {
+  background: linear-gradient(135deg, #f59e0b, #ef4444, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--accent), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}

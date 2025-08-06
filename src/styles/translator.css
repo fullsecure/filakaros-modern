@@ -1,0 +1,181 @@
+/* Google Translate Custom Styling */
+
+/* Hide the default Google Translate widget */
+#google_translate_element {
+  display: none !important;
+}
+
+/* Hide Google Translate toolbar */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+/* Hide Google Translate top frame */
+.goog-te-ftab {
+  display: none !important;
+}
+
+/* Remove Google Translate branding */
+.goog-logo-link {
+  display: none !important;
+}
+
+/* Hide the default combo box */
+.goog-te-combo {
+  display: none !important;
+}
+
+/* Style the translated content to maintain design consistency */
+.translated-ltr {
+  direction: ltr !important;
+}
+
+.translated-rtl {
+  direction: rtl !important;
+}
+
+/* Ensure proper font rendering for translated text */
+body.translated {
+  font-family: inherit !important;
+}
+
+/* Fix any layout issues with translated content */
+.goog-te-spinner-pos {
+  display: none !important;
+}
+
+/* Hide Google Translate attribution */
+.goog-te-gadget {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+.goog-te-gadget > span {
+  display: none !important;
+}
+
+.goog-te-gadget > div {
+  display: none !important;
+}
+
+/* Ensure translated text maintains proper styling */
+font[style*="color: rgb(68, 68, 68)"] {
+  color: inherit !important;
+}
+
+font[color="#444444"] {
+  color: inherit !important;
+}
+
+/* Fix any Google Translate iframe issues */
+.skiptranslate iframe {
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+/* Language selector animations */
+.language-dropdown {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive language selector */
+@media (max-width: 768px) {
+  .language-selector-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Loading state for translator */
+.translator-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Translation indicator */
+.translation-active {
+  position: relative;
+}
+
+.translation-active::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Ensure proper text direction for RTL languages */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="ltr"] {
+  text-align: left;
+}
+
+/* Fix any Google Translate CSS conflicts */
+.notranslate {
+  transform: none !important;
+}
+
+/* Maintain proper spacing in translated content */
+.goog-te-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Custom language flag styling */
+.language-flag {
+  font-size: 1.2em;
+  line-height: 1;
+  display: inline-block;
+}
+
+/* Accessibility improvements */
+.language-selector:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+  .goog-te-menu-value span {
+    color: inherit !important;
+  }
+  
+  .goog-te-menu-frame {
+    background: #1f2937 !important;
+    border: 1px solid #374151 !important;
+  }
+}
