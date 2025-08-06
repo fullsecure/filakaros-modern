@@ -14,6 +14,25 @@ import { getResponsiveSizes, getProjectImageInfo } from "@/lib/image-optimizatio
 
 const projects = [
   {
+    id: "trading-platform",
+    title: "IKAR Trading Platform",
+    subtitle: "🎯 Priority Project - Professional Trading Experience",
+    description: "Our flagship project and top priority - a professional-grade trading platform featuring institutional-level security, advanced analytics, and seamless user experience. This platform will be the foundation of our ecosystem, generating early revenue and establishing market presence.",
+    icon: TrendingUp,
+    status: "Priority Project",
+    timeline: "Q2 2026 - Q4 2026",
+    features: [
+      "Real-time advanced trading analytics",
+      "Bank-grade multi-layer security protocols",
+      "Sub-second order execution engine",
+      "Cross-platform mobile and web applications",
+      "Integrated IKAROS ecosystem features"
+    ],
+    technologies: ["Trading Engine", "Security", "Analytics", "Mobile Apps", "Ecosystem Integration"],
+    color: "text-yellow-400",
+    gradient: "from-yellow-500 to-orange-500"
+  },
+  {
     id: "civilizations-ai",
     title: "Civilizations AI",
     subtitle: "Interactive Cultural Exploration",
@@ -21,7 +40,7 @@ const projects = [
     icon: Gamepad2,
     image: "/images/projects/Civilizations.png",
     status: "In Development",
-    timeline: "Q1 2026 - Q4 2026",
+    timeline: "Q1 2027 - Q3 2027",
     features: [
       "195 unique country NFT boxes",
       "3D landmark exploration with AI guides",
@@ -39,8 +58,8 @@ const projects = [
     description: "A specialized marketplace for trading cultural heritage NFTs, enabling communities to monetize their heritage while ensuring preservation and accessibility.",
     icon: Palette,
     image: "/images/projects/nftmarketplace.png",
-    status: "In Development",
-    timeline: "Q1 2026 - Q4 2026",
+    status: "Planned",
+    timeline: "Q2 2027 - Q4 2027",
     features: [
       "Cultural artifact tokenization",
       "Community-driven validation",
@@ -58,8 +77,8 @@ const projects = [
     description: "A comprehensive DeFi platform offering staking, governance, lending, and yield farming opportunities within the IKAROS ecosystem.",
     icon: Landmark,
     image: "/images/projects/ikarosDeFiPlatform.png",
-    status: "In Development",
-    timeline: "Q3 2026 - Q2 2027",
+    status: "Future",
+    timeline: "Q1 2028 - Q3 2028",
     features: [
       "IKAROS token staking with rewards",
       "Decentralized governance voting",
@@ -69,25 +88,6 @@ const projects = [
     technologies: ["DeFi", "Smart Contracts", "Governance", "Staking"],
     color: "text-green-400",
     gradient: "from-green-500 to-emerald-500"
-  },
-  {
-    id: "trading-platform",
-    title: "IKAR Trading Platform",
-    subtitle: "🎯 Flagship Trading Experience",
-    description: "The culminating project of our ecosystem - a professional-grade trading platform featuring institutional-level security, advanced analytics, and seamless user experience. This platform represents the pinnacle of our technological development, integrating all ecosystem components.",
-    icon: TrendingUp,
-    status: "Flagship Project",
-    timeline: "Q1 2027 - Q4 2027",
-    features: [
-      "Real-time advanced trading analytics",
-      "Bank-grade multi-layer security protocols",
-      "Sub-second order execution engine",
-      "Cross-platform mobile and web applications",
-      "Integrated IKAROS ecosystem features"
-    ],
-    technologies: ["Trading Engine", "Security", "Analytics", "Mobile Apps", "Ecosystem Integration"],
-    color: "text-yellow-400",
-    gradient: "from-yellow-500 to-orange-500"
   }
 ]
 

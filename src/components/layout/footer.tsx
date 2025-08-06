@@ -12,7 +12,7 @@ import {
   MapPin,
   Phone
 } from "lucide-react"
-import { FaTwitter, FaFacebook, FaInstagram, FaGithub } from "react-icons/fa"
+import { FaTwitter, FaFacebook, FaInstagram, FaGithub, FaDiscord } from "react-icons/fa"
 
 const footerLinks = {
   product: [
@@ -51,7 +51,7 @@ const socialIcons = {
   twitter: FaTwitter,
   facebook: FaFacebook,
   instagram: FaInstagram,
-  discord: Send,
+  discord: FaDiscord,
   github: FaGithub,
 }
 

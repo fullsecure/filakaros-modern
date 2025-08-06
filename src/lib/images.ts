@@ -48,7 +48,7 @@ export const imageConfig = {
   
   // اللوغو والأيقونات
   branding: {
-    logo: '/images/logo.png',
+    logo: '/images/projects/token.png',
     icon: '/icon.svg',
     favicon: '/favicon.ico',
   },

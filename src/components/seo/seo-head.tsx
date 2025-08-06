@@ -158,7 +158,7 @@ export function ArticleSEO({
       "name": "Filakaros",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://filakaros.com/images/logo.png"
+        "url": "https://filakaros.com/images/projects/token.png"
       }
     }
   }

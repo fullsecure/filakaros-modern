@@ -152,7 +152,7 @@ export default function Home() {
               },
               {
                 label: "Current Price",
-                value: "$0.001",
+                value: "$0.007",
                 subtext: "+15.2% (24h)",
                 icon: "📈"
               },

@@ -162,7 +162,7 @@ export const structuredData = {
     name: 'Filakaros',
     alternateName: 'IKAROS',
     url: siteInfo.url,
-    logo: `${siteInfo.url}/images/logo.png`,
+    logo: `${siteInfo.url}/images/projects/token.png`,
     description: siteInfo.description,
     foundingDate: '2024',
     sameAs: [
@@ -224,7 +224,7 @@ export const structuredData = {
     category: 'Cryptocurrency',
     offers: {
       '@type': 'Offer',
-      price: '0.001',
+      price: '0.007',
       priceCurrency: 'USD',
       availability: 'https://schema.org/PreOrder',
       seller: {

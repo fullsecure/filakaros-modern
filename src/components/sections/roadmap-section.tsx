@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Rocket, Coins, Settings, Globe, Star, CheckCircle, Clock, Calendar } from "lucide-react"
+import { Rocket, Coins, Settings, Globe, Star, CheckCircle, Clock, Calendar, TrendingUp, Palette, Landmark } from "lucide-react"
 import { Section } from "@/components/ui/section"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -53,67 +53,81 @@ const roadmapPhases = [
   },
   {
     id: "phase-4",
-    title: "Phase IV - DEX Launch & Initial Trading",
-    date: "Q4 2025 - Q2 2026",
+    title: "Phase IV - IKAR Trading Platform Development",
+    date: "Q2 2026 - Q4 2026",
     status: "upcoming" as const,
-    icon: Settings,
-    description: "Launch of IKAROS token on decentralized exchanges with comprehensive testing, security audits, and gradual rollout to ensure stability.",
+    icon: TrendingUp,
+    description: "Priority development and launch of the flagship IKAR Trading Platform with institutional-grade security, advanced analytics, and professional trading features.",
     features: [
-      { title: "Smart contract security audits", completed: false },
-      { title: "PancakeSwap listing at $0.0007", completed: false },
-      { title: "Liquidity pools establishment", completed: false },
-      { title: "Community trading activation", completed: false }
+      { title: "Trading platform architecture design", completed: false },
+      { title: "Advanced trading engine development", completed: false },
+      { title: "Security protocols implementation", completed: false },
+      { title: "Beta testing and platform launch", completed: false }
     ]
   },
   {
     id: "phase-5",
-    title: "Phase V - Platform Development",
-    date: "Q1 2026 - Q4 2026",
+    title: "Phase V - DEX Launch & Trading Platform Integration",
+    date: "Q4 2026 - Q2 2027",
     status: "upcoming" as const,
-    icon: Star,
-    description: "Development of core Civilizations AI platform, NFT marketplace infrastructure, and initial AR/VR integration with extensive testing phases.",
+    icon: Settings,
+    description: "Launch of IKAROS token on decentralized exchanges with trading platform integration, comprehensive testing, and security audits.",
     features: [
-      { title: "Civilizations AI platform beta", completed: false },
-      { title: "Cultural Heritage NFT marketplace", completed: false },
-      { title: "AR/VR integration development", completed: false },
-      { title: "User testing and feedback integration", completed: false }
+      { title: "Smart contract security audits", completed: false },
+      { title: "PancakeSwap listing at $0.0007", completed: false },
+      { title: "Trading platform DEX integration", completed: false },
+      { title: "Liquidity pools establishment", completed: false }
     ]
   },
   {
     id: "phase-6",
-    title: "Phase VI - CEX Integration & Expansion",
-    date: "Q3 2026 - Q2 2027",
+    title: "Phase VI - Civilizations AI Development",
+    date: "Q1 2027 - Q3 2027",
     status: "upcoming" as const,
-    icon: Globe,
-    description: "Strategic partnerships with major centralized exchanges, comprehensive compliance procedures, and global market expansion initiatives.",
+    icon: Star,
+    description: "Development of core Civilizations AI platform with NFT-based country boxes, 3D landmark exploration, and AR/VR integration for immersive cultural experiences.",
     features: [
-      { title: "Regulatory compliance preparation", completed: false },
+      { title: "Civilizations AI platform beta", completed: false },
+      { title: "195 unique country NFT boxes", completed: false },
+      { title: "3D landmark exploration with AI guides", completed: false },
+      { title: "AR/VR integration development", completed: false }
+    ]
+  },
+  {
+    id: "phase-7",
+    title: "Phase VII - NFT Marketplace & CEX Expansion",
+    date: "Q2 2027 - Q4 2027",
+    status: "future" as const,
+    icon: Palette,
+    description: "Launch of Cultural Heritage NFT Marketplace with strategic partnerships for major centralized exchanges, comprehensive compliance, and global market expansion.",
+    features: [
+      { title: "Cultural Heritage NFT marketplace launch", completed: false },
       { title: "Major CEX partnerships & listings", completed: false },
       { title: "IKAROS token listing at $0.001", completed: false },
       { title: "Global marketing campaigns", completed: false }
     ]
   },
   {
-    id: "phase-7",
-    title: "Phase VII - IKAR Proprietary Exchange",
-    date: "Q1 2027 - Q4 2027",
+    id: "phase-8",
+    title: "Phase VIII - DeFi Platform & Educational Ecosystem",
+    date: "Q1 2028 - Q3 2028",
     status: "future" as const,
-    icon: Coins,
-    description: "Development and launch of the comprehensive IKAR trading platform with advanced DeFi features, institutional-grade security, and full ecosystem integration.",
+    icon: Landmark,
+    description: "Launch of comprehensive DeFi platform with staking, governance, and educational platform featuring AI-powered learning paths and virtual museum tours.",
     features: [
-      { title: "Exchange platform development", completed: false },
-      { title: "Advanced trading features", completed: false },
-      { title: "Institutional security standards", completed: false },
-      { title: "Full ecosystem integration", completed: false }
+      { title: "IKAR DeFi platform with staking", completed: false },
+      { title: "Educational platform with AI guides", completed: false },
+      { title: "Virtual museum tours with AR", completed: false },
+      { title: "Decentralized governance implementation", completed: false }
     ]
   },
   {
-    id: "phase-8",
-    title: "Phase VIII - Ecosystem Maturation",
-    date: "Q1 2028+",
+    id: "phase-9",
+    title: "Phase IX - Ecosystem Maturation",
+    date: "Q4 2028+",
     status: "future" as const,
     icon: Star,
-    description: "Full ecosystem launch with AI-powered cultural preservation tools, global educational partnerships, and sustainable long-term growth initiatives.",
+    description: "Full ecosystem maturation with AI-powered cultural preservation tools, global educational partnerships, and sustainable long-term growth initiatives.",
     features: [
       { title: "AI cultural preservation tools", completed: false },
       { title: "Educational institution partnerships", completed: false },

@@ -5,17 +5,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { 
-  MessageCircle, 
-  Twitter, 
-  Github, 
-  Send, 
-  Users, 
-  Globe, 
+import {
+  MessageCircle,
+  Twitter,
+  Github,
+  Send,
+  Users,
+  Globe,
   Calendar,
   Award,
   TrendingUp
 } from "lucide-react"
+import { FaFacebook, FaInstagram } from "react-icons/fa"
 
 const communityStats = [
   { label: "Community Members", value: "50K+", icon: Users },
@@ -42,20 +43,20 @@ const socialPlatforms = [
     color: "bg-sky-500"
   },
   {
-    name: "Discord",
-    description: "Connect with developers and heritage enthusiasts",
-    members: "8,000+",
-    icon: Send,
-    href: "https://discord.gg/ikarosworld",
-    color: "bg-indigo-500"
+    name: "Facebook",
+    description: "Connect with our community on Facebook",
+    members: "10,000+",
+    icon: FaFacebook,
+    href: "https://www.facebook.com/profile.php?id=61571425265684",
+    color: "bg-blue-600"
   },
   {
-    name: "GitHub",
-    description: "Contribute to our open-source projects",
-    members: "2,500+",
-    icon: Github,
-    href: "https://github.com/ikarosworld",
-    color: "bg-gray-800"
+    name: "Instagram",
+    description: "Follow our visual journey and updates",
+    members: "8,000+",
+    icon: FaInstagram,
+    href: "https://www.instagram.com/ikaros_worlds/",
+    color: "bg-pink-500"
   }
 ]
 

@@ -72,24 +72,24 @@ const teamMembers: TeamMember[] = [
     expertise: ["Operations", "Scaling", "Management"]
   },
   {
-    name: "Ayham Ismail",
-    role: "CSO",
-    fullRole: "Chief Sales Officer",
-    bio: "Sales strategist with proven track record in building global partnerships. Leading business development and strategic alliances for worldwide expansion.",
-    image: "/team/cso.jpg",
-    icon: TrendingUp,
+    name: "Ana's Al Samman",
+    role: "CIO",
+    fullRole: "Chief Information Officer",
+    bio: "Experienced development manager leading technical teams and project delivery. Expert in agile methodologies and ensuring high-quality software development across all Filakaros platforms.",
+    image: "/team/development-manager.jpg",
+    icon: Code,
     iconColor: "text-green-400",
     iconBg: "bg-gradient-to-br from-green-500 to-emerald-500",
     social: {
       linkedin: "#"
     },
-    expertise: ["Sales", "Partnerships", "Growth"]
+    expertise: ["Development", "Team Leadership", "Project Management"]
   },
   {
     name: "Eiad Saeed",
-    role: "IT Manager",
-    fullRole: "IT Manager",
-    bio: "Technology infrastructure expert ensuring robust, scalable systems. Manages cloud architecture and security protocols for enterprise-grade performance.",
+    role: "CTO",
+    fullRole: "Chief Technology Officer",
+    bio: "Technology infrastructure expert and site development specialist ensuring robust, scalable systems. Manages cloud architecture, security protocols, and leads website development for enterprise-grade performance.",
     image: "/team/it-manager.jpg",
     icon: Zap,
     iconColor: "text-purple-400",
@@ -97,27 +97,27 @@ const teamMembers: TeamMember[] = [
     social: {
       linkedin: "https://www.linkedin.com/in/eiadsaeed/"
     },
-    expertise: ["Infrastructure", "Security", "Cloud"]
+    expertise: ["Infrastructure", "Security", "Cloud", "Site Development"]
   },
   {
-    name: "Naveen Kapoor",
-    role: "Blockchain Developer Manager",
-    fullRole: "Blockchain Developer Manager",
-    bio: "Blockchain architecture specialist leading smart contract development. Expert in DeFi protocols and Web3 integration for cultural heritage applications.",
-    image: "/team/blockchain-manager.jpg",
-    icon: Code,
+    name: "Mohammad Douglas",
+    role: "CMO",
+    fullRole: "Chief Marketing Officer",
+    bio: "Dynamic sales manager with expertise in building strategic partnerships and driving revenue growth. Specializes in blockchain technology sales and expanding market reach for innovative cultural heritage solutions.",
+    image: "/team/sales-manager.jpg",
+    icon: TrendingUp,
     iconColor: "text-orange-400",
     iconBg: "bg-gradient-to-br from-orange-500 to-red-500",
     social: {
-      linkedin: "https://www.linkedin.com/in/kapoor-n/"
+      linkedin: "#"
     },
-    expertise: ["Blockchain", "Smart Contracts", "DeFi"]
+    expertise: ["Sales", "Partnerships", "Business Development"]
   },
   {
     name: "Ahmed Kair",
-    role: "Graphic Designer Manager",
-    fullRole: "Graphic Designer Manager",
-    bio: "Creative visionary crafting the visual identity of Filakaros. Leading design strategy for brand, UI/UX, and cultural heritage visualization projects.",
+    role: "Design & Marketing Coordinator",
+    fullRole: "Design & Marketing Coordinator",
+    bio: "Creative professional specializing in visual design and marketing coordination. Expert in brand development, digital marketing campaigns, and creating compelling visual content that bridges cultural heritage with modern design aesthetics.",
     image: "/team/design-manager.jpg",
     icon: Palette,
     iconColor: "text-pink-400",
@@ -125,35 +125,49 @@ const teamMembers: TeamMember[] = [
     social: {
       behance: "#"
     },
-    expertise: ["Design", "Branding", "UI/UX"]
+    expertise: ["Design", "Marketing", "Branding", "Coordination"]
   },
   {
-    name: "Mohammed Ali",
-    role: "Marketing Director",
-    fullRole: "Marketing Director",
-    bio: "Marketing strategist driving brand awareness and community growth. Expert in crypto marketing, community building, and digital campaign optimization.",
-    image: "/team/marketing-director.jpg",
-    icon: Globe,
+    name: "Sarah Johnson",
+    role: "CFO",
+    fullRole: "Chief Financial Officer",
+    bio: "Financial strategist with extensive experience in blockchain economics and cryptocurrency markets. Oversees financial planning, risk management, and ensures sustainable growth for Filakaros ecosystem.",
+    image: "/team/cfo.jpg",
+    icon: Briefcase,
+    iconColor: "text-emerald-400",
+    iconBg: "bg-gradient-to-br from-emerald-500 to-teal-500",
+    social: {
+      linkedin: "#"
+    },
+    expertise: ["Finance", "Strategy", "Risk Management", "Blockchain Economics"]
+  },
+  {
+    name: "David Chen",
+    role: "Head of Innovation",
+    fullRole: "Head of Innovation",
+    bio: "Innovation leader driving cutting-edge research in AI and cultural heritage preservation. Spearheads development of next-generation technologies that bridge traditional heritage with modern digital solutions.",
+    image: "/team/innovation.jpg",
+    icon: Lightbulb,
     iconColor: "text-cyan-400",
     iconBg: "bg-gradient-to-br from-cyan-500 to-blue-500",
     social: {
       linkedin: "#"
     },
-    expertise: ["Marketing", "Community", "Growth"]
+    expertise: ["Innovation", "AI Research", "Heritage Tech", "R&D"]
   },
   {
-    name: "Sara Ahmed",
-    role: "Product Manager",
-    fullRole: "Product Manager",
-    bio: "Product development specialist focused on user experience optimization. Leading product strategy and feature development for cultural heritage platforms.",
-    image: "/team/product-manager.jpg",
-    icon: Target,
-    iconColor: "text-teal-400",
-    iconBg: "bg-gradient-to-br from-teal-500 to-green-500",
+    name: "Maria Rodriguez",
+    role: "Community Manager",
+    fullRole: "Community Manager",
+    bio: "Community engagement specialist fostering global connections and building strong relationships with heritage enthusiasts worldwide. Expert in community growth and stakeholder engagement.",
+    image: "/team/community.jpg",
+    icon: Users,
+    iconColor: "text-violet-400",
+    iconBg: "bg-gradient-to-br from-violet-500 to-purple-500",
     social: {
       linkedin: "#"
     },
-    expertise: ["Product", "UX", "Strategy"]
+    expertise: ["Community", "Engagement", "Growth", "Communications"]
   }
 ]
 
@@ -196,7 +210,7 @@ export function TeamSection() {
           </motion.div>
         </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {teamMembers.map((member, index) => (
           <motion.div
             key={member.name}

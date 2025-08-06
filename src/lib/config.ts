@@ -56,20 +56,25 @@ export const socialLinks = [
   },
   {
     name: "Facebook",
-    href: "https://www.facebook.com/share/1Yv6gECr65/",
+    href: "https://www.facebook.com/profile.php?id=61571425265684",
     icon: "facebook"
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/ikaros.worlds",
+    href: "https://www.instagram.com/ikaros_worlds/",
     icon: "instagram"
+  },
+  {
+    name: "Discord",
+    href: "https://discord.gg/ikarosworld",
+    icon: "discord"
   }
 ]
 
 export const tokenomics = {
   totalSupply: 5000000000,
-  currentPrice: 0.001,
-  holders: 1000000,
+  currentPrice: 0.007,
+  holders: 152000,
   lockedLiquidity: 85,
   distribution: [
     {

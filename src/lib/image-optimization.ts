@@ -70,6 +70,13 @@ export const projectImages = {
     quality: 'medium' as const,
     seoKeywords: ['NFT marketplace', 'cultural heritage NFTs', 'digital artifacts', 'blockchain trading']
   },
+  'trading-platform': {
+    src: '/images/projects/trading-platform.png',
+    alt: 'IKAR Trading Platform - Professional Grade Cryptocurrency Trading Platform with Advanced Analytics and Institutional Security',
+    priority: true,
+    quality: 'high' as const,
+    seoKeywords: ['trading platform', 'cryptocurrency exchange', 'professional trading', 'IKAR platform']
+  },
   'ikar-platform': {
     src: '/images/projects/ikarosDeFiPlatform.png',
     alt: 'IKAR DeFi Platform - Decentralized Finance Ecosystem for IKAROS Token Staking, Governance, and Yield Farming',

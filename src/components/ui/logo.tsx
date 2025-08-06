@@ -66,7 +66,7 @@ export function Logo({
       )}
     >
       <Image
-        src="/images/logo.png"
+        src="/images/projects/token.png"
         alt="Filakaros Logo"
         width={size === "sm" ? 24 : size === "md" ? 32 : size === "lg" ? 48 : 64}
         height={size === "sm" ? 24 : size === "md" ? 32 : size === "lg" ? 48 : 64}

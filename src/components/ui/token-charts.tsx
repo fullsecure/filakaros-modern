@@ -114,7 +114,7 @@ export function TokenPriceChart({ className }: { className?: string }) {
     { time: "Apr", price: 0.0008 },
     { time: "May", price: 0.0009 },
     { time: "Jun", price: 0.001 },
-    { time: "Jul", price: 0.0012 }
+    { time: "Jul", price: 0.007 }
   ]
   
   const maxPrice = Math.max(...priceData.map(d => d.price))
@@ -126,7 +126,7 @@ export function TokenPriceChart({ className }: { className?: string }) {
         <div>
           <h3 className="text-xl font-bold">IKAROS/USDT</h3>
           <div className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-green-400">$0.001</span>
+            <span className="text-2xl font-bold text-green-400">$0.007</span>
             <span className="text-sm text-green-400">+15.2% (24h)</span>
           </div>
         </div>
@@ -206,7 +206,7 @@ export function TokenPriceChart({ className }: { className?: string }) {
 export function TradingStats({ className }: { className?: string }) {
   const stats = [
     { label: "24h Volume", value: "$2.1M", change: "+12.5%", positive: true },
-    { label: "Total Holders", value: "15,234", change: "+8.2%", positive: true },
+    { label: "Total Holders", value: "152K", change: "+8.2%", positive: true },
     { label: "Liquidity", value: "$8.5M", change: "+5.1%", positive: true },
     { label: "Market Rank", value: "#247", change: "+15", positive: true }
   ]

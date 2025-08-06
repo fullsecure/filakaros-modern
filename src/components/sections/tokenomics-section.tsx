@@ -21,14 +21,14 @@ const overviewStats = [
   {
     icon: TrendingUp,
     title: "Current Price",
-    value: "$0.001",
+    value: "$0.007",
     label: "+15.2% (24h)",
     color: "text-accent"
   },
   {
     icon: Users,
     title: "Holders",
-    value: "1M+",
+    value: "152K",
     label: "Active Wallets",
     color: "text-secondary"
   },

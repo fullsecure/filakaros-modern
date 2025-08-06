@@ -76,7 +76,7 @@ export function SEOHead({
             "name": siteConfig.name,
             "description": siteConfig.description,
             "url": siteConfig.url,
-            "logo": `${siteConfig.url}/logo.png`,
+            "logo": `${siteConfig.url}/images/projects/token.png`,
             "sameAs": [
               siteConfig.links.twitter,
               siteConfig.links.telegram,
