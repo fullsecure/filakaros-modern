@@ -101,16 +101,36 @@
   box-shadow: 0 8px 25px var(--shadow-color);
 }
 
-/* تأثير الزجاج المبسط */
+/* تأثير الزجاج المبسط مع دعم أفضل للمتصفحات */
 .glass-effect {
   background: rgba(255, 255, 255, 0.1);
+  /* Fallback for browsers that don't support backdrop-filter */
+  background: rgba(255, 255, 255, 0.15);
+  /* Modern backdrop filter with vendor prefixes */
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Support check for backdrop-filter */
+@supports (backdrop-filter: blur(10px)) {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
 .dark .glass-effect {
   background: rgba(0, 0, 0, 0.2);
+  /* Fallback for browsers that don't support backdrop-filter */
+  background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Support check for backdrop-filter in dark mode */
+@supports (backdrop-filter: blur(10px)) {
+  .dark .glass-effect {
+    background: rgba(0, 0, 0, 0.2);
+  }
 }
 
 /* تدرجات النصوص المحسّنة */
