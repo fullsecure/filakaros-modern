@@ -4,12 +4,16 @@ import * as React from "react"
 import { motion } from "framer-motion"
 
 import { Download, FileText, Globe, Coins, Shield, Users, Zap, Target } from "lucide-react"
-import { Section } from "@/components/ui/section"
-import { Container } from "@/components/ui/container"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-
+import {
+  Section,
+  Container,
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  Button,
+  Badge
+} from "@/components/ui"
 import { PageBreadcrumb } from "@/components/ui/breadcrumb"
 
 // Metadata is exported from metadata.ts file

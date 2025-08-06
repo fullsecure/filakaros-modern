@@ -2,10 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Calendar, Clock, MapPin, Users, Video, Globe, ExternalLink, Bell } from "lucide-react"
-import { Section } from "@/components/ui/section"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Section, Card, CardContent, CardHeader, CardTitle, Badge, Button } from "@/components/ui"
 
 const upcomingEvents = [
   {

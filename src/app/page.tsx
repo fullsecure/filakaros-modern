@@ -2,9 +2,7 @@
 
 import { motion } from "framer-motion"
 import { generateJSONLD, structuredData } from "@/lib/seo"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Section } from "@/components/ui/section"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Section, Badge } from "@/components/ui"
 import { EnhancedHeroSection } from "@/components/sections/enhanced-hero-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { TokenomicsSection } from "@/components/sections/tokenomics-section"

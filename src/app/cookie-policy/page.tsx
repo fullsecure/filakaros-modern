@@ -3,12 +3,17 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { Cookie, Settings, BarChart, Shield, Globe, Eye, Trash2, RefreshCw } from "lucide-react"
-import { Section } from "@/components/ui/section"
-import { Container } from "@/components/ui/container"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { BackgroundEffects } from "@/components/ui/background-effects"
+import {
+  Section,
+  Container,
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  Badge,
+  Button,
+  BackgroundEffects
+} from "@/components/ui"
 import { LegalBreadcrumb } from "@/components/ui/breadcrumb"
 
 // SEO metadata will be handled by layout or head.tsx

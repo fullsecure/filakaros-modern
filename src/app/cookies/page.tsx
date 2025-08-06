@@ -2,9 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Cookie, Settings, BarChart, Shield, Info, CheckCircle } from "lucide-react"
-import { Section } from "@/components/ui/section"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Section, Card, CardContent, CardHeader, CardTitle, Badge } from "@/components/ui"
 
 const cookieTypes = [
   {
