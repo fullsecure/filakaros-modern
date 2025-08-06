@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['filakaros.com', 'localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'filakaros.com',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
+    ],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -17,17 +26,6 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
-  // إعدادات معالجة الأخطاء
-  onDemandEntries: {
-    // فترة الاحتفاظ بالصفحات في الذاكرة
-    maxInactiveAge: 25 * 1000,
-    // فترة التحديث
-    pagesBufferLength: 2,
-  },
-  // تحسين الأداء
-  experimental: {
-    optimizeCss: true,
-  },
   // إعدادات الأمان
   headers: async () => {
     return [
