@@ -28,6 +28,12 @@
 - تحسين إعدادات الـ functions
 - إضافة headers أمان إضافية
 
+### 6. إصلاح مشكلة TailwindCSS الحرجة ⚠️
+- **المشكلة**: `Cannot find module 'tailwindcss'` على Vercel
+- **الحل**: نقل `tailwindcss`, `postcss`, `autoprefixer` من `devDependencies` إلى `dependencies`
+- **السبب**: Vercel يحتاج هذه الحزم أثناء عملية البناء في الإنتاج
+- **النتيجة**: حل مشكلة البناء نهائياً على Vercel
+
 ## 🔧 خطوات النشر على Vercel
 
 ### الطريقة الأولى: عبر Vercel CLI
