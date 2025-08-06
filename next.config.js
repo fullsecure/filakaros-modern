@@ -26,6 +26,14 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  // إعدادات webpack لحل مشكلة path mapping
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': require('path').resolve(__dirname, 'src'),
+    }
+    return config
+  },
   // إعدادات الأمان
   headers: async () => {
     return [
