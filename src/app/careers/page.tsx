@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion"
 import { Briefcase, MapPin, Clock, Users, Heart, Zap, Globe, Star, ExternalLink } from "lucide-react"
-import { Section, Card, CardContent, CardHeader, CardTitle, Badge, Button } from "@/components/ui"
+import { Section } from "@/components/ui/section"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 
 const jobOpenings = [
   {

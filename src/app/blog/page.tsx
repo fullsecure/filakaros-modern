@@ -3,17 +3,12 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { Calendar, Clock, User, ArrowRight, Search, Tag } from "lucide-react"
-import {
-  Section,
-  Container,
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  Button,
-  Badge,
-  Input
-} from "@/components/ui"
+import { Section } from "@/components/ui/section"
+import { Container } from "@/components/ui/container"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
 import { PageBreadcrumb } from "@/components/ui/breadcrumb"
 
 const blogPosts = [

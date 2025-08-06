@@ -2,7 +2,11 @@
 
 import { motion } from "framer-motion"
 import { HelpCircle, Book, MessageCircle, Mail, Search, ExternalLink, FileText, Video, Users } from "lucide-react"
-import { Section, Card, CardContent, CardHeader, CardTitle, Badge, Button, Input } from "@/components/ui"
+import { Section } from "@/components/ui/section"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { HelpDialog } from "@/components/help/help-dialog"
 import { useState } from "react"
 

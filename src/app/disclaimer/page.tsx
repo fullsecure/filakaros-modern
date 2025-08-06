@@ -3,16 +3,11 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { AlertTriangle, TrendingDown, Shield, Info, Zap, Globe, Scale, FileX } from "lucide-react"
-import {
-  Section,
-  Container,
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  Badge,
-  BackgroundEffects
-} from "@/components/ui"
+import { Section } from "@/components/ui/section"
+import { Container } from "@/components/ui/container"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { BackgroundEffects } from "@/components/ui/background-effects"
 import { LegalBreadcrumb } from "@/components/ui/breadcrumb"
 
 // SEO metadata will be handled by layout or head.tsx

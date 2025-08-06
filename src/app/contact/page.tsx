@@ -3,17 +3,12 @@
 import { motion } from "framer-motion"
 import { Mail, MessageCircle, Send, Briefcase, HelpCircle } from "lucide-react"
 
-import {
-  Section,
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  Badge,
-  Button,
-  Input,
-  Textarea
-} from "@/components/ui"
+import { Section } from "@/components/ui/section"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 
 // Metadata is exported from metadata.ts file
 import { useState } from "react"

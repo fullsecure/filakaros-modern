@@ -2,7 +2,11 @@
 
 import { motion } from "framer-motion"
 import { ChevronDown, Search, HelpCircle, Coins, Shield, Globe } from "lucide-react"
-import { Section, Card, CardContent, CardHeader, CardTitle, Badge, Button, Input } from "@/components/ui"
+import { Section } from "@/components/ui/section"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 // Metadata is exported from metadata.ts file
 import { useState } from "react"
