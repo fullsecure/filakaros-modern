@@ -99,40 +99,44 @@ font[color="#444444"] {
   }
 }
 
-/* Responsive language selector */
-@media (max-width: 768px) {
-  .language-selector-mobile {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    background: rgba(0, 0, 0, 0.8);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-  }
+/* Loading states */
+.translation-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
-/* Loading state for translator */
-.translator-loading {
-  opacity: 0.6;
-  pointer-events: none;
+/* Error states */
+.translation-error {
+  border: 1px solid #ef4444;
+  background: #fef2f2;
+  color: #dc2626;
 }
 
-/* Translation indicator */
-.translation-active {
-  position: relative;
+.dark .translation-error {
+  background: #7f1d1d;
+  color: #fca5a5;
 }
 
-.translation-active::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 8px;
-  height: 8px;
-  background: #4ade80;
-  border-radius: 50%;
+/* Success states */
+.translation-success {
+  border: 1px solid #10b981;
+  background: #f0fdf4;
+  color: #059669;
+}
+
+.dark .translation-success {
+  background: #064e3b;
+  color: #6ee7b7;
+}
+
+/* Loading animation */
+.translation-spinner {
   animation: pulse 2s infinite;
 }
 
@@ -145,47 +149,39 @@ font[color="#444444"] {
   }
 }
 
-/* Ensure proper text direction for RTL languages */
-[dir="rtl"] {
-  text-align: right;
-}
-
-[dir="ltr"] {
-  text-align: left;
-}
-
-/* Fix any Google Translate CSS conflicts */
-.notranslate {
-  transform: none !important;
-}
-
-/* Maintain proper spacing in translated content */
-.goog-te-highlight {
-  background: none !important;
-  box-shadow: none !important;
-}
-
-/* Custom language flag styling */
-.language-flag {
-  font-size: 1.2em;
-  line-height: 1;
-  display: inline-block;
-}
-
-/* Accessibility improvements */
-.language-selector:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* Dark mode compatibility */
-@media (prefers-color-scheme: dark) {
-  .goog-te-menu-value span {
-    color: inherit !important;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .language-dropdown {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 300px;
   }
-  
-  .goog-te-menu-frame {
-    background: #1f2937 !important;
-    border: 1px solid #374151 !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .goog-te-combo {
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .language-dropdown,
+  .translation-spinner {
+    animation: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  #google_translate_element,
+  .goog-te-combo,
+  .goog-te-banner-frame,
+  .goog-te-ftab {
+    display: none !important;
   }
 }

@@ -32,7 +32,7 @@ export function LanguageTranslator({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = React.useState(false)
   const [currentLanguage, setCurrentLanguage] = React.useState<Language>(languages[0])
   const dropdownRef = React.useRef<HTMLDivElement>(null)
-  const { isLoaded, isTranslating, translateTo, resetToOriginal, error } = useTranslation()
+  const { isLoaded, isTranslating, translateTo, resetToOriginal, error, isReady } = useTranslation()
 
   // Close dropdown when clicking outside
   React.useEffect(() => {
@@ -49,16 +49,20 @@ export function LanguageTranslator({ className }: { className?: string }) {
   const handleLanguageChange = (language: Language) => {
     setCurrentLanguage(language)
     setIsOpen(false)
-    if (isLoaded) {
+    if (isReady) {
       translateTo(language.code)
+    } else {
+      console.warn('Translation service not ready yet')
     }
   }
 
   const handleReset = () => {
     setCurrentLanguage(languages[0])
     setIsOpen(false)
-    if (isLoaded) {
+    if (isReady) {
       resetToOriginal()
+    } else {
+      console.warn('Translation service not ready yet')
     }
   }
 
@@ -76,7 +80,7 @@ export function LanguageTranslator({ className }: { className?: string }) {
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors"
           aria-label="Select language"
-          disabled={isTranslating}
+          disabled={isTranslating || !isReady}
         >
           {isTranslating ? (
             <Loader2 className="w-4 h-4 animate-spin" />
@@ -115,7 +119,7 @@ export function LanguageTranslator({ className }: { className?: string }) {
                       "hover:bg-muted focus:bg-muted focus:outline-none",
                       currentLanguage.code === language.code && "bg-muted"
                     )}
-                    disabled={isTranslating}
+                    disabled={isTranslating || !isReady}
                   >
                     <span className="text-lg">{language.flag}</span>
                     <div className="flex-1 text-left">
@@ -135,7 +139,7 @@ export function LanguageTranslator({ className }: { className?: string }) {
                       type="button"
                       onClick={handleReset}
                       className="w-full flex items-center space-x-3 px-2 py-2 text-sm rounded-md transition-colors hover:bg-muted focus:bg-muted focus:outline-none text-primary"
-                      disabled={isTranslating}
+                      disabled={isTranslating || !isReady}
                     >
                       <Languages className="w-4 h-4" />
                       <span>Reset to Original</span>
@@ -149,16 +153,16 @@ export function LanguageTranslator({ className }: { className?: string }) {
       </div>
 
       {/* Loading indicator */}
-      {!isLoaded && !error && (
+      {!isReady && !error && (
         <div className="absolute top-full left-0 mt-1 text-xs text-muted-foreground">
-          Loading translator...
+          {isLoaded ? 'Initializing translator...' : 'Loading translator...'}
         </div>
       )}
 
       {/* Error indicator */}
       {error && (
-        <div className="absolute top-full left-0 mt-1 text-xs text-red-500">
-          Translation unavailable
+        <div className="absolute top-full left-0 mt-1 text-xs text-red-500 max-w-48">
+          {error.includes('Retrying') ? error : 'Translation service unavailable'}
         </div>
       )}
     </div>
@@ -169,7 +173,7 @@ export function LanguageTranslator({ className }: { className?: string }) {
 export function LanguageTranslatorCompact({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = React.useState(false)
   const [currentLanguage, setCurrentLanguage] = React.useState<Language>(languages[0])
-  const { translateTo, isTranslating } = useTranslation()
+  const { translateTo, isTranslating, isReady } = useTranslation()
 
   return (
     <div className={cn("relative", className)}>
@@ -180,7 +184,7 @@ export function LanguageTranslatorCompact({ className }: { className?: string })
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center space-x-1 p-2"
         aria-label="Select language"
-        disabled={isTranslating}
+        disabled={isTranslating || !isReady}
       >
         <Globe className="w-4 h-4" />
         <span className="text-sm">{currentLanguage.flag}</span>
@@ -203,10 +207,12 @@ export function LanguageTranslatorCompact({ className }: { className?: string })
                   onClick={() => {
                     setCurrentLanguage(language)
                     setIsOpen(false)
-                    translateTo(language.code)
+                    if (isReady) {
+                      translateTo(language.code)
+                    }
                   }}
                   className="w-full flex items-center space-x-2 px-2 py-1.5 text-sm rounded hover:bg-muted transition-colors"
-                  disabled={isTranslating}
+                  disabled={isTranslating || !isReady}
                 >
                   <span>{language.flag}</span>
                   <span className="text-xs">{language.nativeName}</span>

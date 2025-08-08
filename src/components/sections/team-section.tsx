@@ -126,48 +126,6 @@ const teamMembers: TeamMember[] = [
       behance: "#"
     },
     expertise: ["Design", "Marketing", "Branding", "Coordination"]
-  },
-  {
-    name: "Sarah Johnson",
-    role: "CFO",
-    fullRole: "Chief Financial Officer",
-    bio: "Financial strategist with extensive experience in blockchain economics and cryptocurrency markets. Oversees financial planning, risk management, and ensures sustainable growth for Filakaros ecosystem.",
-    image: "/team/cfo.jpg",
-    icon: Briefcase,
-    iconColor: "text-emerald-400",
-    iconBg: "bg-gradient-to-br from-emerald-500 to-teal-500",
-    social: {
-      linkedin: "#"
-    },
-    expertise: ["Finance", "Strategy", "Risk Management", "Blockchain Economics"]
-  },
-  {
-    name: "David Chen",
-    role: "Head of Innovation",
-    fullRole: "Head of Innovation",
-    bio: "Innovation leader driving cutting-edge research in AI and cultural heritage preservation. Spearheads development of next-generation technologies that bridge traditional heritage with modern digital solutions.",
-    image: "/team/innovation.jpg",
-    icon: Lightbulb,
-    iconColor: "text-cyan-400",
-    iconBg: "bg-gradient-to-br from-cyan-500 to-blue-500",
-    social: {
-      linkedin: "#"
-    },
-    expertise: ["Innovation", "AI Research", "Heritage Tech", "R&D"]
-  },
-  {
-    name: "Maria Rodriguez",
-    role: "Community Manager",
-    fullRole: "Community Manager",
-    bio: "Community engagement specialist fostering global connections and building strong relationships with heritage enthusiasts worldwide. Expert in community growth and stakeholder engagement.",
-    image: "/team/community.jpg",
-    icon: Users,
-    iconColor: "text-violet-400",
-    iconBg: "bg-gradient-to-br from-violet-500 to-purple-500",
-    social: {
-      linkedin: "#"
-    },
-    expertise: ["Community", "Engagement", "Growth", "Communications"]
   }
 ]
 

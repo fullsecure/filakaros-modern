@@ -9,6 +9,13 @@ interface TranslationState {
   error: string | null
 }
 
+declare global {
+  interface Window {
+    google: any
+    googleTranslateElementInit: () => void
+  }
+}
+
 export function useTranslation() {
   const [state, setState] = useState<TranslationState>({
     isLoaded: false,
@@ -17,64 +24,151 @@ export function useTranslation() {
     error: null
   })
 
-  // Initialize Google Translate
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    // Check if already loaded
-    if (window.google?.translate) {
-      setState(prev => ({ ...prev, isLoaded: true }))
+    console.log('🚀 Initializing Google Translate...')
+
+    // Check if already working
+    const existingCombo = document.querySelector('.goog-te-combo') as HTMLSelectElement
+    if (existingCombo && existingCombo.options && existingCombo.options.length > 0) {
+      console.log('✅ Google Translate already working')
+      setState(prev => ({ ...prev, isLoaded: true, error: null }))
       return
     }
 
-    // Check if script already exists
-    const existingScript = document.querySelector('script[src*="translate.google.com"]')
-    if (existingScript) {
-      return
+    // Clean up any existing attempts
+    const cleanup = () => {
+      document.querySelectorAll('script[src*="translate.google.com"]').forEach(s => s.remove())
+      document.querySelectorAll('#google_translate_element').forEach(e => e.remove())
+      document.querySelectorAll('.goog-te-combo').forEach(e => e.remove())
+      if (window.googleTranslateElementInit) {
+        window.googleTranslateElementInit = undefined as any
+      }
+      if (window.google?.translate) {
+        window.google.translate = undefined
+      }
     }
 
-    // Create script element
-    const script = document.createElement('script')
-    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
-    script.async = true
-    script.onerror = () => {
-      setState(prev => ({ ...prev, error: 'Failed to load translation service' }))
-    }
+    cleanup()
 
-    // Initialize callback
-    window.googleTranslateElementInit = () => {
-      try {
-        if (window.google?.translate) {
-          new window.google.translate.TranslateElement(
-            {
+    // Create container
+    const container = document.createElement('div')
+    container.id = 'google_translate_element'
+    container.className = 'notranslate'
+    container.style.position = 'absolute'
+    container.style.left = '-9999px'
+    container.style.width = '1px'
+    container.style.height = '1px'
+    container.style.overflow = 'hidden'
+    container.style.opacity = '0'
+    document.body.appendChild(container)
+
+    // Set up callback function
+    window.googleTranslateElementInit = function() {
+      console.log('📞 Google Translate callback triggered')
+      
+      // Wait for API to be fully ready
+      setTimeout(() => {
+        try {
+          if (window.google?.translate?.TranslateElement?.InlineLayout) {
+            console.log('🏗️ Creating TranslateElement...')
+            
+            new window.google.translate.TranslateElement({
               pageLanguage: 'en',
               includedLanguages: 'en,ar,fr,es',
               layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
               autoDisplay: false,
               multilanguagePage: true
-            },
-            'google_translate_element'
-          )
-          setState(prev => ({ ...prev, isLoaded: true, error: null }))
+            }, 'google_translate_element')
+
+            // Wait for combo element to be created
+            let attempts = 0
+            const maxAttempts = 30
+            
+            const checkForCombo = () => {
+              attempts++
+              console.log(`🔍 Checking for combo element... (${attempts}/${maxAttempts})`)
+              
+              const combo = document.querySelector('.goog-te-combo') as HTMLSelectElement
+              
+              if (combo && combo.options && combo.options.length > 0) {
+                console.log(`✅ Success! Found combo with ${combo.options.length} options`)
+                
+                // Hide the combo but keep it functional
+                combo.style.position = 'absolute'
+                combo.style.left = '-9999px'
+                combo.style.opacity = '0'
+                
+                setState(prev => ({ 
+                  ...prev, 
+                  isLoaded: true, 
+                  error: null 
+                }))
+              } else if (attempts < maxAttempts) {
+                setTimeout(checkForCombo, 500)
+              } else {
+                console.log('❌ Combo element not found after maximum attempts')
+                setState(prev => ({ 
+                  ...prev, 
+                  error: 'Translation service initialization failed' 
+                }))
+              }
+            }
+            
+            // Start checking after a delay
+            setTimeout(checkForCombo, 1000)
+            
+          } else {
+            console.log('❌ Google Translate API not fully available')
+            setState(prev => ({ 
+              ...prev, 
+              error: 'Google Translate API not available' 
+            }))
+          }
+        } catch (error) {
+          console.error('❌ Error in callback:', error)
+          setState(prev => ({ 
+            ...prev, 
+            error: `Initialization error: ${error}` 
+          }))
         }
-      } catch (error) {
-        console.error('Translation initialization failed:', error)
-        setState(prev => ({ ...prev, error: 'Translation initialization failed' }))
-      }
+      }, 1000)
+    }
+
+    // Load the Google Translate script
+    console.log('📥 Loading Google Translate script...')
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+    script.async = true
+    
+    script.onload = () => {
+      console.log('✅ Google Translate script loaded')
+    }
+    
+    script.onerror = (error) => {
+      console.error('❌ Failed to load Google Translate script:', error)
+      setState(prev => ({ 
+        ...prev, 
+        error: 'Failed to load translation script' 
+      }))
     }
 
     document.head.appendChild(script)
 
+    // Cleanup function
     return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script)
-      }
+      cleanup()
     }
   }, [])
 
   // Translate to specific language
   const translateTo = useCallback((languageCode: string) => {
-    if (!state.isLoaded || !window.google?.translate) {
+    console.log(`🌐 Translating to: ${languageCode}`)
+
+    if (!state.isLoaded) {
+      console.warn('⚠️ Translation service not ready')
       setState(prev => ({ ...prev, error: 'Translation service not available' }))
       return
     }
@@ -82,24 +176,38 @@ export function useTranslation() {
     setState(prev => ({ ...prev, isTranslating: true, error: null }))
 
     try {
-      const translateElement = document.querySelector('.goog-te-combo') as HTMLSelectElement
-      if (translateElement) {
-        translateElement.value = languageCode
-        translateElement.dispatchEvent(new Event('change'))
-        
-        // Update state after a short delay to allow translation to process
-        setTimeout(() => {
-          setState(prev => ({ 
-            ...prev, 
-            currentLanguage: languageCode, 
-            isTranslating: false 
-          }))
-        }, 500)
-      } else {
-        setState(prev => ({ ...prev, error: 'Translation element not found', isTranslating: false }))
+      const combo = document.querySelector('.goog-te-combo') as HTMLSelectElement
+      
+      if (!combo) {
+        setState(prev => ({ 
+          ...prev, 
+          error: 'Translation interface not found', 
+          isTranslating: false 
+        }))
+        return
       }
+
+      // Set the language and trigger change
+      combo.value = languageCode
+      combo.dispatchEvent(new Event('change', { bubbles: true }))
+      
+      // Update state after translation
+      setTimeout(() => {
+        setState(prev => ({ 
+          ...prev, 
+          currentLanguage: languageCode, 
+          isTranslating: false,
+          error: null
+        }))
+      }, 1000)
+      
     } catch (error) {
-      setState(prev => ({ ...prev, error: 'Translation failed', isTranslating: false }))
+      console.error('❌ Translation error:', error)
+      setState(prev => ({ 
+        ...prev, 
+        error: `Translation failed: ${error}`, 
+        isTranslating: false 
+      }))
     }
   }, [state.isLoaded])
 
@@ -127,59 +235,26 @@ export function useTranslation() {
   }
 }
 
-// Hook for detecting current page language
-export function usePageLanguage() {
-  const [pageLanguage, setPageLanguage] = useState('en')
-
-  useEffect(() => {
-    // Detect language from HTML lang attribute
-    const htmlLang = document.documentElement.lang || 'en'
-    setPageLanguage(htmlLang)
-
-    // Listen for language changes
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
-          const newLang = document.documentElement.lang || 'en'
-          setPageLanguage(newLang)
-        }
-      })
-    })
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['lang']
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
-  return pageLanguage
-}
-
 // Hook for translation status
 export function useTranslationStatus() {
   const [isTranslated, setIsTranslated] = useState(false)
+  const [currentLang, setCurrentLang] = useState('en')
 
   useEffect(() => {
-    const checkTranslationStatus = () => {
-      // Check if page is currently translated
-      const comboElement = document.querySelector('.goog-te-combo') as HTMLSelectElement
-      const isCurrentlyTranslated = document.body.classList.contains('translated-ltr') ||
-                                   document.body.classList.contains('translated-rtl') ||
-                                   Boolean(comboElement?.value && comboElement.value !== 'en')
-
-      setIsTranslated(isCurrentlyTranslated)
+    const checkStatus = () => {
+      const combo = document.querySelector('.goog-te-combo') as HTMLSelectElement
+      const translated = document.body.classList.contains('translated-ltr') ||
+                        document.body.classList.contains('translated-rtl') ||
+                        Boolean(combo?.value && combo.value !== 'en')
+      
+      setIsTranslated(translated)
+      setCurrentLang(combo?.value || 'en')
     }
 
-    // Check initially
-    checkTranslationStatus()
-
-    // Set up interval to check translation status
-    const interval = setInterval(checkTranslationStatus, 1000)
-
+    checkStatus()
+    const interval = setInterval(checkStatus, 1000)
     return () => clearInterval(interval)
   }, [])
 
-  return isTranslated
+  return { isTranslated, currentLang }
 }
