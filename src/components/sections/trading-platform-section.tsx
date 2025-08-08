@@ -122,43 +122,7 @@ const ecosystemStats = [
   }
 ]
 
-const platforms = [
-  {
-    name: "MEXC",
-    logo: "/images/platforms/mexc.png",
-    hasWhiteBg: true
-  },
-  {
-    name: "OKX",
-    logo: "/images/platforms/okx.png",
-    hasWhiteBg: true
-  },
-  {
-    name: "Trust Wallet",
-    logo: "/images/platforms/trust_wallet.png",
-    hasWhiteBg: false
-  },
-  {
-    name: "PancakeSwap",
-    logo: "/images/platforms/PancakeSwap.png",
-    hasWhiteBg: false
-  },
-  {
-    name: "MetaMask",
-    logo: "/images/platforms/MetaMask.jpg",
-    hasWhiteBg: false
-  },
-  {
-    name: "CoinMarketCap",
-    logo: "/images/platforms/CoinMarketCap.png",
-    hasWhiteBg: true
-  },
-  {
-    name: "Bitget",
-    logo: "/images/platforms/bitget.png",
-    hasWhiteBg: false
-  }
-]
+
 
 export function ProjectsSection() {
   return (
@@ -363,44 +327,7 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* Coming Soon Platforms */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="space-y-8"
-        >
-          <div className="text-center space-y-4">
-            <h3 className="text-2xl md:text-3xl font-bold">
-              Coming Soon <span className="text-gradient-cool">On</span>
-            </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              IKAROS will be available on major exchanges and platforms soon
-            </p>
-          </div>
 
-          {/* Scrolling Platforms */}
-          <div className="relative overflow-hidden py-4">
-            <div className="flex animate-scroll space-x-6 md:space-x-8">
-              {/* Duplicate platforms for seamless loop */}
-              {platforms.concat(platforms).map((platform, index) => (
-                <motion.div
-                  key={`${platform.name}-${index}`}
-                  className="flex-shrink-0 w-28 h-14 md:w-32 md:h-16 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl flex items-center justify-center hover:bg-card/70 transition-all duration-300 group platform-logo-container"
-                  data-logo={platform.hasWhiteBg ? "white-bg" : "normal"}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <img
-                    src={platform.logo}
-                    alt={`${platform.name} logo`}
-                    className="max-w-[100px] max-h-[32px] md:max-w-[120px] md:max-h-[40px] object-contain platform-logo group-hover:brightness-110 transition-all duration-300"
-                    loading="lazy"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
       </div>
     </Section>
   )

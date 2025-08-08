@@ -4,7 +4,6 @@ import "./globals.css";
 import { MainLayout } from "@/components/layout/main-layout";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ErrorBoundary } from "@/components/error-boundary";
-import { siteConfig } from "@/lib/config";
 import { createSEOMetadata, structuredData, generateJSONLD } from "@/lib/seo";
 
 // تحسين الخطوط للموقع
@@ -44,9 +43,9 @@ export const metadata: Metadata = {
   }),
   // إضافة معلومات إضافية للـ metadata
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
   manifest: "/site.webmanifest",
   other: {
