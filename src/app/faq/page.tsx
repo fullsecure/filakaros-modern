@@ -61,13 +61,13 @@ const faqs = [
     id: "4",
     category: "tokenomics",
     question: "How is the IKAROS token distributed?",
-    answer: "Token distribution: 30% for Heritage Preservation (1.5B tokens), 25% for Community Rewards (1.25B tokens), 20% for Development (1B tokens), 15% for Liquidity Pool (750M tokens), and 10% for Team & Advisors (500M tokens). This ensures sustainable funding for our mission while rewarding our community."
+    answer: "New token distribution: 40% for Sales & Marketing (2B tokens), 20% for Airdrop (1B tokens), 15% for Development (750M tokens), 15% for Team (750M tokens), and 10% for Liquidity (500M tokens). This strategic allocation ensures strong market presence, community rewards, and sustainable development funding."
   },
   {
     id: "5",
     category: "tokenomics",
     question: "What are the current token prices and where can I buy IKAROS?",
-    answer: "The current presale price is $0.0007, with a planned listing price of $0.001. We're currently in Phase II of our roadmap, focusing on tokenomics and funding. Exchange listings are planned for Q2 2024. Join our Telegram community @ikarosworld for the latest updates on availability."
+    answer: "The current presale price is $0.007, with a planned launch price of $0.01 (42.8% ROI at launch). We're currently in Phase III of our roadmap, focusing on private presale and platform development. DEX listings are planned for Q4 2026. Join our Telegram community @ikarosworld for the latest updates on availability."
   },
   {
     id: "6",

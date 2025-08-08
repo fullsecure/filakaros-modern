@@ -151,9 +151,9 @@ export default function Home() {
                 icon: "🪙"
               },
               {
-                label: "Current Price",
-                value: "$0.007",
-                subtext: "+15.2% (24h)",
+                label: "Launch Price",
+                value: "$0.01",
+                subtext: "42.8% ROI from presale",
                 icon: "📈"
               },
               {

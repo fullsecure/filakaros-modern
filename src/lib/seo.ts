@@ -224,7 +224,7 @@ export const structuredData = {
     category: 'Cryptocurrency',
     offers: {
       '@type': 'Offer',
-      price: '0.007',
+      price: '0.01',
       priceCurrency: 'USD',
       availability: 'https://schema.org/PreOrder',
       seller: {

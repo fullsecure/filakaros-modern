@@ -31,8 +31,8 @@ const whitepaperSections = [
     description: "The native digital currency powering the Filakaros ecosystem",
     content: [
       "Total Supply: 5 billion tokens",
-      "Current Price: $0.007",
-      "Active Holders: 152K wallets",
+      "Presale Price: $0.007",
+      "Launch Price: $0.01 (42.8% ROI)",
       "Built on Binance Smart Chain"
     ]
   },

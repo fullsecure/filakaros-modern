@@ -230,12 +230,11 @@ const helpContent: Record<string, HelpArticle> = {
     content: {
       overview: "Dive deep into the IKAROS token economics, distribution model, and utility within the Filakaros ecosystem.",
       tokenDistribution: [
-        { category: "Airdrop", percentage: 20, amount: "1,000,000,000", lockup: "Gradual unlock", color: "bg-blue-500" },
-        { category: "Marketing", percentage: 25, amount: "1,250,000,000", lockup: "6 months gradual", color: "bg-green-500" },
-        { category: "Development", percentage: 20, amount: "1,000,000,000", lockup: "12 months gradual", color: "bg-purple-500" },
-        { category: "Liquidity", percentage: 15, amount: "750,000,000", lockup: "No lockup", color: "bg-yellow-500" },
-        { category: "Team", percentage: 15, amount: "750,000,000", lockup: "18 months", color: "bg-red-500" },
-        { category: "Reserve", percentage: 5, amount: "250,000,000", lockup: "24 months", color: "bg-gray-500" }
+        { category: "Sales & Marketing", percentage: 40, amount: "2,000,000,000", lockup: "6 months gradual", color: "bg-blue-500" },
+        { category: "Airdrop", percentage: 20, amount: "1,000,000,000", lockup: "Gradual unlock", color: "bg-purple-500" },
+        { category: "Development", percentage: 15, amount: "750,000,000", lockup: "12 months gradual", color: "bg-cyan-500" },
+        { category: "Team", percentage: 15, amount: "750,000,000", lockup: "18 months", color: "bg-green-500" },
+        { category: "Liquidity", percentage: 10, amount: "500,000,000", lockup: "No lockup", color: "bg-yellow-500" }
       ],
       tokenUtility: [
         "Governance voting rights",
@@ -247,8 +246,8 @@ const helpContent: Record<string, HelpArticle> = {
       ],
       economicModel: {
         totalSupply: "5,000,000,000 IKAROS",
-        presalePrice: "$0.0007",
-        listingPrice: "$0.001",
+        presalePrice: "$0.007",
+        listingPrice: "$0.01",
         expectedROI: "42.8% at listing",
         blockchain: "Binance Smart Chain"
       }

@@ -74,35 +74,36 @@ export const socialLinks = [
 export const tokenomics = {
   totalSupply: 5000000000,
   currentPrice: 0.007,
+  launchPrice: 0.01,
   holders: 152000,
   lockedLiquidity: 85,
   distribution: [
     {
-      name: "Heritage Preservation",
-      percentage: 30,
-      amount: 1500000000,
+      name: "Sales & Marketing",
+      percentage: 40,
+      amount: 2000000000,
       color: "#6366f1"
     },
     {
-      name: "Community Rewards",
-      percentage: 25,
-      amount: 1250000000,
+      name: "Airdrop",
+      percentage: 20,
+      amount: 1000000000,
       color: "#8b5cf6"
     },
     {
       name: "Development",
-      percentage: 20,
-      amount: 1000000000,
+      percentage: 15,
+      amount: 750000000,
       color: "#06b6d4"
     },
     {
-      name: "Liquidity Pool",
+      name: "Team",
       percentage: 15,
       amount: 750000000,
       color: "#10b981"
     },
     {
-      name: "Team & Advisors",
+      name: "Liquidity",
       percentage: 10,
       amount: 500000000,
       color: "#f59e0b"

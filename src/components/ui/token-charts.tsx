@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils"
 
 // بيانات توزيع التوكن
 const tokenDistribution = [
-  { name: "Heritage Preservation", value: 30, color: "#8B5CF6", amount: "1.5B IKAROS" },
-  { name: "Community Rewards", value: 25, color: "#06B6D4", amount: "1.3B IKAROS" },
-  { name: "Development", value: 20, color: "#10B981", amount: "1.0B IKAROS" },
-  { name: "Liquidity Pool", value: 15, color: "#F59E0B", amount: "0.8B IKAROS" },
-  { name: "Team & Advisors", value: 10, color: "#EF4444", amount: "0.5B IKAROS" }
+  { name: "Sales & Marketing", value: 40, color: "#6366f1", amount: "2.0B IKAROS" },
+  { name: "Airdrop", value: 20, color: "#8b5cf6", amount: "1.0B IKAROS" },
+  { name: "Development", value: 15, color: "#06b6d4", amount: "750M IKAROS" },
+  { name: "Team", value: 15, color: "#10b981", amount: "750M IKAROS" },
+  { name: "Liquidity", value: 10, color: "#f59e0b", amount: "500M IKAROS" }
 ]
 
 // مكون الرسم البياني الدائري
@@ -113,8 +113,8 @@ export function TokenPriceChart({ className }: { className?: string }) {
     { time: "Mar", price: 0.0007 },
     { time: "Apr", price: 0.0008 },
     { time: "May", price: 0.0009 },
-    { time: "Jun", price: 0.001 },
-    { time: "Jul", price: 0.007 }
+    { time: "Jun", price: 0.007 },
+    { time: "Jul", price: 0.01 }
   ]
   
   const maxPrice = Math.max(...priceData.map(d => d.price))
@@ -126,8 +126,8 @@ export function TokenPriceChart({ className }: { className?: string }) {
         <div>
           <h3 className="text-xl font-bold">IKAROS/USDT</h3>
           <div className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-green-400">$0.007</span>
-            <span className="text-sm text-green-400">+15.2% (24h)</span>
+            <span className="text-2xl font-bold text-green-400">$0.01</span>
+            <span className="text-sm text-green-400">+42.8% (Launch)</span>
           </div>
         </div>
         <div className="text-right">

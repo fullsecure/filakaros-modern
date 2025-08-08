@@ -10,7 +10,7 @@ import { imageSizes } from "@/lib/images"
 
 const heroStats = [
   { label: "Total Supply", value: "5B", subtext: "IKAROS Tokens" },
-  { label: "Current Price", value: "$0.007", subtext: "+15.2% (24h)" },
+  { label: "Launch Price", value: "$0.01", subtext: "42.8% ROI from presale" },
   { label: "Countries NFTs", value: "195", subtext: "Global Coverage" }
 ]
 
