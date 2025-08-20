@@ -126,6 +126,21 @@ const teamMembers: TeamMember[] = [
       behance: "#"
     },
     expertise: ["Design", "Marketing", "Branding", "Coordination"]
+  },
+  {
+    name: "Nissie Mompero",
+    role: "Marketing & Social media manager",
+    fullRole: "Marketing & Social media manager",
+    bio: "Expert in digital marketing and social media strategy, driving community engagement and brand growth for Filakaros across all platforms.",
+    image: "/team/marketing-manager.jpg",
+    icon: Globe,
+    iconColor: "text-teal-400",
+    iconBg: "bg-gradient-to-br from-teal-500 to-cyan-500",
+    social: {
+      linkedin: "#",
+      twitter: "#"
+    },
+    expertise: ["Marketing", "Social Media", "Community"]
   }
 ]
 

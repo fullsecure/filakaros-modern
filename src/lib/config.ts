@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
   url: "https://filakaros.com",
   ogImage: "https://filakaros.com/og-image.jpg",
   links: {
-    twitter: "https://x.com/IkarosWorld1975",
+    twitter: "https://x.com/ikarosworld1",
     telegram: "https://t.me/ikarosworld",
     github: "https://github.com/ikarosworld"
   }
@@ -51,7 +51,7 @@ export const socialLinks = [
   },
   {
     name: "X (Twitter)",
-    href: "https://x.com/IkarosWorld1975",
+    href: "https://x.com/ikarosworld1",
     icon: "twitter"
   },
   {
@@ -61,7 +61,7 @@ export const socialLinks = [
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/ikaros_worlds/",
+    href: "https://www.instagram.com/ikaros.world",
     icon: "instagram"
   },
   {

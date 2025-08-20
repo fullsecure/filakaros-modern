@@ -28,7 +28,7 @@ const footerLinks = {
     { name: "Community", href: "#community" },
     { name: "FAQ", href: "/faq" },
     { name: "Telegram", href: "https://t.me/ikarosworld" },
-    { name: "X (Twitter)", href: "https://x.com/IkarosWorld1975" },
+    { name: "X (Twitter)", href: "https://x.com/ikarosworld1" },
   ],
   resources: [
     { name: "Events", href: "/events" },
