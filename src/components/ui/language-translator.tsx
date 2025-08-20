@@ -21,18 +21,11 @@ const languages: Language[] = [
   { code: "es", name: "Spanish", nativeName: "Español", flag: "🇪🇸" },
 ]
 
-declare global {
-  interface Window {
-    google: any
-    googleTranslateElementInit: () => void
-  }
-}
-
 export function LanguageTranslator({ className }: { className?: string }) {
   const [isOpen, setIsOpen] = React.useState(false)
   const [currentLanguage, setCurrentLanguage] = React.useState<Language>(languages[0])
   const dropdownRef = React.useRef<HTMLDivElement>(null)
-  const { isLoaded, isTranslating, translateTo, resetToOriginal, error, isReady } = useTranslation()
+  const { isTranslating, translateTo, resetToOriginal, error, isReady } = useTranslation()
 
   // Close dropdown when clicking outside
   React.useEffect(() => {
@@ -155,7 +148,7 @@ export function LanguageTranslator({ className }: { className?: string }) {
       {/* Loading indicator */}
       {!isReady && !error && (
         <div className="absolute top-full left-0 mt-1 text-xs text-muted-foreground">
-          {isLoaded ? 'Initializing translator...' : 'Loading translator...'}
+          Loading translator...
         </div>
       )}
 
