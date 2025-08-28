@@ -18,7 +18,7 @@ const upcomingEvents = [
     type: "webinar",
     location: "Online",
     registrationUrl: "https://filakaros.com/events/launch-webinar",
-    speakers: ["Abdullah M S Alhoti - CEO", "Eiad Saeed - CTO", "Mohammad Douglas - CMO"],
+    speakers: ["Abdullah M S Alhoti - CEO", "Mohammad Douglas - CMO"],
     image: "/events/launch-webinar.jpg",
     featured: true
   },

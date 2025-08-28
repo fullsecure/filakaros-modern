@@ -86,20 +86,6 @@ const teamMembers: TeamMember[] = [
     expertise: ["Development", "Team Leadership", "Project Management"]
   },
   {
-    name: "Eiad Saeed",
-    role: "CTO",
-    fullRole: "Chief Technology Officer",
-    bio: "Technology infrastructure expert and site development specialist ensuring robust, scalable systems. Manages cloud architecture, security protocols, and leads website development for enterprise-grade performance.",
-    image: "/team/it-manager.jpg",
-    icon: Zap,
-    iconColor: "text-purple-400",
-    iconBg: "bg-gradient-to-br from-purple-500 to-violet-500",
-    social: {
-      linkedin: "https://www.linkedin.com/in/eiadsaeed/"
-    },
-    expertise: ["Infrastructure", "Security", "Cloud", "Site Development"]
-  },
-  {
     name: "Mohammad Douglas",
     role: "CMO",
     fullRole: "Chief Marketing Officer",
